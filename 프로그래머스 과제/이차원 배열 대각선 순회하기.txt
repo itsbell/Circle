@@ -1,0 +1,28 @@
+#include <string>
+#include <vector>
+
+using namespace std;
+
+int solution(vector<vector<int>> board, int k) {
+    int answer = 0;
+
+    int i = 0;
+    int j;
+    int sum = 0;
+    vector<int> vector;
+
+    while (i < board.size()) {
+        vector = board[i];
+        j = 0;
+        while (j < vector.size()) {
+            sum = i + j;
+            if (sum <= k) {
+                answer += board[i][j];
+            }
+            j++;
+        }
+        i++;
+    }
+
+    return answer;
+}
