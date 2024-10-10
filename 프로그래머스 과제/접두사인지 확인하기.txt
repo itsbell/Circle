@@ -1,0 +1,15 @@
+#include <string>
+#include <vector>
+
+using namespace std;
+
+int solution(string my_string, string is_prefix) {
+    int answer = 0;
+    
+    size_t nPos = my_string.find(is_prefix);
+    if (nPos == 0) {
+        answer = 1;
+    }
+
+    return answer;
+}
