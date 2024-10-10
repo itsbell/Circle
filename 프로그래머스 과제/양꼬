@@ -1,0 +1,22 @@
+#include <string>
+#include <vector>
+
+using namespace std;
+
+#define LAMBSKEWERS 12000
+#define DRINKINGWATER 2000
+
+int solution(int n, int k) {
+    int answer = 0;
+    int lambSkewers = 0;
+    int drinkingWater = 0;
+    int service = 0;
+
+    lambSkewers = n * LAMBSKEWERS;
+    drinkingWater = k * DRINKINGWATER;
+    service = n / 10 * DRINKINGWATER;
+    
+    answer = lambSkewers + drinkingWater - service;
+
+    return answer;
+}
