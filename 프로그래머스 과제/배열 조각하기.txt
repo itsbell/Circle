@@ -1,0 +1,35 @@
+#include <string>
+#include <vector>
+
+using namespace std;
+
+vector<int> solution(vector<int> arr, vector<int> query) {
+    vector<int> answer(arr);
+    int i = 0;
+    int j;
+    int remainder;
+    int count;
+
+    while (i < query.size()) {
+        remainder = i % 2;
+        if (remainder == 0) {
+            count = answer.size() - (query[i] + 1);
+            j = 0;
+            while (j < count) {
+                answer.pop_back();
+                j++;
+            }
+        }
+        else {
+            count = query[i];
+            j = 0;
+            while (j < count) {
+                answer.erase(answer.begin());
+                j++;
+            }
+        }
+        i++;
+    }
+
+    return answer;
+}
